@@ -1,0 +1,23 @@
+# With the braces it's a rule. Without them, it's a root widget.
+
+<GridLayout>:
+    lbl: lbl
+    cols: 1
+
+    # Define a textinput area for user to give language phrases
+    TextInput:
+        id: input
+        text: ''
+
+    # Define a button to send textinput for translation
+    Button:
+        id: lbl, input
+        text: 'Translate Phrase'
+        on_press: root.translate(input.text)
+
+    # Define a label to display the translated phrases
+    Label:
+        id: lbl
+        text_size: self.size
+        halign: 'center'
+        valign: 'center'
